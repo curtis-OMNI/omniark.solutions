@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni Ark Impact Sessions: Your Journey to Transformation</title>
+    <!-- Use Tailwind CSS for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Heroicons for clean SVG icons -->
+    <script src="https://unpkg.com/heroicons@2.1.3/dist/heroicons.min.js"></script>
+    <style>
+        /* Custom styles for gradients and fonts */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .gradient-bg {
+            background-image: linear-gradient(to right, #2563eb, #8b5cf6);
+        }
+        .session-card {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border: 2px solid;
+        }
+        .session-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Individual card base styles with color contrast */
+        .session-card[data-session="1"] { border-color: #dbeafe; background-color: #eff6ff; }
+        .session-card[data-session="2"] { border-color: #ede9fe; background-color: #f5f3ff; }
+        .session-card[data-session="3"] { border-color: #dcfce7; background-color: #f0fdf4; }
+        .session-card[data-session="4"] { border-color: #fef9c3; background-color: #fffbeb; }
+
+        /* Style for the active card, with a dark background and glowing text, and scaling */
+        .active-card {
+            background-color: #1f2937;
+            color: #06b6d4; /* Neon cyan text color */
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.6); /* Matching glow effect */
+            border-color: #06b6d4;
+            transform: scale(1.05); /* Increase size slightly */
+            position: relative; /* Needed for z-index to work */
+            z-index: 10; /* Bring active card to the front */
+        }
+        .active-card h3, .active-card p {
+            color: #06b6d4; /* Ensure all text within the card is the neon color */
+            text-shadow: 0 0 5px rgba(6, 182, 212, 0.8); /* Add a subtle text glow */
+        }
+        /* Define a fade-in animation for the details panel */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* SVG specific styles */
+        .svg-icon {
+            height: 100px;
+            width: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Omni Ark</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#sessions" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Sessions</a>
+                <a href="#artifacts" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Artifacts</a>
+                <a href="#commitment" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Commitment</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 lg:py-32 text-center rounded-b-3xl shadow-xl">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+                Your Journey to Transformation
+            </h1>
+            <p class="text-lg sm:text-xl lg:text-2xl font-light mb-8 max-w-3xl mx-auto">
+                At Omni Ark, we believe the best solutions are built together. Our Impact Sessions are the crucial first step in our comprehensive solutions program.
+            </p>
+            <a href="#sessions" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-300">
+                Explore the Sessions
+            </a>
+        </div>
+    </section>
+
+    <!-- Sessions Timeline Section -->
+    <section id="sessions" class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">
+            Your Journey Through the Impact Sessions
+        </h2>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+            Over four focused Impact Sessions, we'll partner with you during the discovery phase to create a clear roadmap for your success. Each session builds on the last, helping us uncover valuable insights and develop powerful tools specifically for your organization.
+        </p>
+
+        <!-- New Section for "What are Impact Sessions all about?" -->
+        <div class="bg-gray-100 p-8 rounded-xl shadow-lg max-w-4xl mx-auto mb-12">
+            <h3 class="text-2xl font-bold text-center mb-6">What are Impact Sessions all about?</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <!-- Understand Your World -->
+                <div>
+                    <div class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-full text-white mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 mb-2">Understand Your World</h4>
+                    <p class="text-sm text-gray-700">We'll dive deep into your business operations, goals, and current processes.</p>
+                </div>
+                <!-- Identify Your Opportunities -->
+                <div>
+                    <div class="flex items-center justify-center w-12 h-12 bg-purple-500 rounded-full text-white mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673c-.22.42-.516.828-.887 1.189-1.543 1.543-4.057 1.543-5.6 0-.371-.361-.667-.769-.887-1.189z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 110-18 9 9 0 010 18z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 mb-2">Identify Your Opportunities</h4>
+                    <p class="text-sm text-gray-700">We'll pinpoint key areas where efficiency can be improved and challenges can be overcome.</p>
+                </div>
+                <!-- Align on Success -->
+                <div>
+                    <div class="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full text-white mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 mb-2">Align on Success</h4>
+                    <p class="text-sm text-gray-700">We'll ensure we're completely aligned on what "success" looks like for your business.</p>
+                </div>
+                <!-- Engage Your Key Players -->
+                <div>
+                    <div class="flex items-center justify-center w-12 h-12 bg-yellow-500 rounded-full text-white mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h2a2 2 0 002-2V7a2 2 0 00-2-2h-3v3m-3 10v-3h-3v3m-3 0h-2a2 2 0 01-2-2V7a2 2 0 012-2h3m3 3h3" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 mb-2">Engage Your Key Players</h4>
+                    <p class="text-sm text-gray-700">We encourage champions from different departments to participate in the process.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Session Cards (Interactive Timeline) -->
+        <div id="session-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Session 1 Card -->
+            <div data-session="1" class="session-card p-6 rounded-xl shadow-lg active-card">
+                <div class="flex items-center justify-center bg-blue-100 text-blue-600 rounded-full w-12 h-12 mb-4 mx-auto">
+                    <!-- Icon for Discovery & Vision -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-center">IMPACT Session 1: The Big Picture</h3>
+                <p class="text-sm text-center mt-2">Discovery & Vision</p>
+            </div>
+            <!-- Session 2 Card -->
+            <div data-session="2" class="session-card p-6 rounded-xl shadow-lg">
+                <div class="flex items-center justify-center bg-purple-100 text-purple-600 rounded-full w-12 h-12 mb-4 mx-auto">
+                    <!-- Icon for Tools & Systems -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-center">IMPACT Session 2: Tools & Systems</h3>
+                <p class="text-sm text-center mt-2">Assessment</p>
+            </div>
+            <!-- Session 3 Card -->
+            <div data-session="3" class="session-card p-6 rounded-xl shadow-lg">
+                <div class="flex items-center justify-center bg-green-100 text-green-600 rounded-full w-12 h-12 mb-4 mx-auto">
+                    <!-- Icon for Processes -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-center">IMPACT Session 3: Deep Dive into Processes</h3>
+                <p class="text-sm text-center mt-2">Detail</p>
+            </div>
+            <!-- Session 4 Card -->
+            <div data-session="4" class="session-card p-6 rounded-xl shadow-lg">
+                <div class="flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full w-12 h-12 mb-4 mx-auto">
+                    <!-- Icon for Refinement & Validation -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.003 12.003 0 0012 21c4.419 0 8.224-1.804 11.618-4.016a4.998 4.998 0 00-6.726-4.048 4.998 4.998 0 00-5.584 4.048c-3.394 2.212-7.2 4.016-11.618 4.016z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-center">IMPACT Session 4: Collaborative Refinement</h3>
+                <p class="text-sm text-center mt-2">Validation</p>
+            </div>
+        </div>
+
+        <!-- Session Details (Hidden until clicked) -->
+        <div id="session-details-container" class="bg-white p-8 rounded-xl shadow-lg transition-all duration-500 ease-in-out">
+            <!-- Details for Session 1 (Visible by default) -->
+            <div data-details="1" class="session-details transition-opacity duration-300 animate-fadeIn">
+                <h3 class="text-2xl font-bold mb-4 text-blue-600">Session 1: The Big Picture (Discovery & Vision)</h3>
+                <p class="text-lg mb-4">
+                    <span class="font-bold">Objective:</span> This session is where we get to know you and your overall business. We'll explore your growth ambitions, operational challenges, and what success truly means for your organization.
+                </p>
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg mb-2">Key Discussions:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Understanding your core business, mission, and strategic objectives.</li>
+                        <li>Identifying overarching pain points and hurdles that impact your overall operations.</li>
+                        <li>Clarifying key performance indicators (KPIs) and how success will be measured.</li>
+                    </ul>
+                </div>
+                <p class="text-lg">
+                    <span class="font-bold">Outcome:</span> A foundational understanding of your business landscape, key objectives, and initial efficiency blockers.
+                </p>
+            </div>
+
+            <!-- Details for Session 2 -->
+            <div data-details="2" class="session-details hidden transition-opacity duration-300">
+                <h3 class="text-2xl font-bold mb-4 text-purple-600">Session 2: Tools & Systems (Discovery & Assessment)</h3>
+                <p class="text-lg mb-4">
+                    <span class="font-bold">Objective:</span> We'll map out your existing workflows, the technology you're currently using, and how your teams collaborate. This helps us identify strengths and potential bottlenecks.
+                </p>
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg mb-2">Key Discussions:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Assessing your current systems and tools (e.g., inventory tracking, invoicing).</li>
+                        <li>Collecting pain points related to your current systems and applications.</li>
+                        <li>Identifying key points of contact within different roles and departments to streamline future communication.</li>
+                    </ul>
+                </div>
+                <p class="text-lg">
+                    <span class="font-bold">Outcome:</span> A clear picture of your current technology stack and existing system-related challenges.
+                </p>
+            </div>
+
+            <!-- Details for Session 3 -->
+            <div data-details="3" class="session-details hidden transition-opacity duration-300">
+                <h3 class="text-2xl font-bold mb-4 text-green-600">Session 3: Deep Dive into Processes (Discovery & Detail)</h3>
+                <p class="text-lg mb-4">
+                    <span class="font-bold">Objective:</span> This session focuses on the granular details of your workflows, how different processes interact, and the dynamics within your teams.
+                </p>
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg mb-2">Key Discussions:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Documenting your high-level processes and workflows (not detailed SOPs yet, but enough to inform our roadmap).</li>
+                        <li>Uncovering what your teams are actually doing day-to-day and mapping out responsibilities.</li>
+                        <li>Collecting pain points related to your current processes and steps, identifying opportunities for automation and improvement.</li>
+                        <li>Champion Sessions: We'll conduct specific discussions with your identified champions to gather detailed, day-to-day operational insights.</li>
+                    </ul>
+                </div>
+                <p class="text-lg">
+                    <span class="font-bold">Outcome:</span> A comprehensive understanding of your existing processes and workflows, highlighting areas ripe for optimization.
+                </p>
+            </div>
+
+            <!-- Details for Session 4 -->
+            <div data-details="4" class="session-details hidden transition-opacity duration-300">
+                <h3 class="text-2xl font-bold mb-4 text-yellow-600">Session 4: Collaborative Refinement (Discovery & Validation)</h3>
+                <p class="text-lg mb-4">
+                    <span class="font-bold">Objective:</span> This final discovery session allows us to review, refine, and validate the insights gathered in previous sessions, ensuring accuracy and alignment with your vision.
+                </p>
+                <div class="mb-4">
+                    <h4 class="font-bold text-lg mb-2">Key Discussions:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Reviewing the consolidated information from previous sessions.</li>
+                        <li>Validating findings and clarifying any remaining questions.</li>
+                        <li>Collaborating on initial thoughts for potential solutions and strategic directions.</li>
+                    </ul>
+                </div>
+                <p class="text-lg">
+                    <span class="font-bold">Outcome:</span> A well-rounded and validated understanding of your business, ready for solution development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artifacts Section -->
+    <section id="artifacts" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">
+                The Powerful Artifacts We'll Create Together
+            </h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                As we progress through these Impact Sessions, we'll produce essential deliverables that guide our entire partnership.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Innovation Roadmap -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-full h-auto mb-4 flex justify-center">
+                        <!-- Corrected SVG for Innovation Roadmap -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M4 17s.5-2 1.5-2.5M10 14s.5-2 1.5-2.5M16 11s.5-2 1.5-2.5M4 17L9 14L15 11L20 8" stroke-dasharray="2 2" />
+                            <path d="M4 17L9 14L15 11L20 8" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M20 8s-1.5 2-1.5 2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="4" cy="17" r="1.5" stroke-width="1.5" fill="currentColor" />
+                            <circle cx="9" cy="14" r="1.5" stroke-width="1.5" fill="currentColor" />
+                            <circle cx="15" cy="11" r="1.5" stroke-width="1.5" fill="currentColor" />
+                            <circle cx="20" cy="8" r="1.5" stroke-width="1.5" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Innovation Roadmap</h3>
+                    <p class="text-gray-600">
+                        This initial artifact outlines a strategic plan for your transformation journey, including phases for operational efficiency, systems optimization, and impact scaling.
+                    </p>
+                </div>
+                <!-- Solutions Track Proposal -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-full h-auto mb-4 flex justify-center">
+                        <!-- Corrected SVG for Solutions Track Proposal -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="5" y="3" width="14" height="18" rx="2" stroke-width="1.5" />
+                            <path d="M9 7h6m-6 4h6m-6 4h4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16 17l-3-3m0 0l-3 3" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="15" r="4" stroke-width="1.5" />
+                            <path d="M12 13v4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M10 15h4" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Solutions Track Proposal</h3>
+                    <p class="text-gray-600">
+                        Once the Innovation Roadmap is refined, we'll present a detailed proposal. This document breaks down the proposed solutions into clear milestones.
+                    </p>
+                </div>
+                <!-- Interactive Demo -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-full h-auto mb-4 flex justify-center">
+                        <!-- This SVG was already working, so it remains unchanged -->
+                        <svg class="h-32 w-32 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L14.25 12L9.75 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22a10 10 0 110-20 10 10 0 010 20z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Interactive Demo</h3>
+                    <p class="text-gray-600">
+                        We'll then provide an interactive demonstration, showcasing the agreed-upon approach and how our solutions will address your specific needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section id="commitment" class="container mx-auto px-6 py-16 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Our Commitment to You</h2>
+        <p class="text-lg text-gray-700 max-w-4xl mx-auto mb-8">
+            These Impact Sessions are the foundation of our entire engagement. They ensure that every solution we propose is highly customized, relevant, and designed to deliver tangible results for your business. We're committed to making these sessions efficient, impactful, and entirely focused on achieving your success.
+        </p>
+        <a href="#" class="inline-block gradient-bg text-white font-bold py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity duration-300">
+            Ready to Start? Let's Talk
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Omni Ark. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sessionCards = document.querySelectorAll('.session-card');
+            const sessionDetails = document.querySelectorAll('.session-details');
+            const sessionDetailsContainer = document.getElementById('session-details-container');
+            const startJourneyBtn = document.querySelector('a[href="#sessions"]');
+
+            // Function to show the selected session's details
+            const showSessionDetails = (sessionId) => {
+                sessionDetails.forEach(detail => {
+                    if (detail.getAttribute('data-details') === sessionId) {
+                        detail.classList.remove('hidden');
+                        detail.classList.add('animate-fadeIn');
+                    } else {
+                        detail.classList.add('hidden');
+                        detail.classList.remove('animate-fadeIn');
+                    }
+                });
+
+                // Update the active card styling
+                sessionCards.forEach(card => {
+                    if (card.getAttribute('data-session') === sessionId) {
+                        card.classList.add('active-card');
+                    } else {
+                        card.classList.remove('active-card');
+                    }
+                });
+            };
+
+            // Event listener for session cards
+            sessionCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Find the closest card element to ensure the click target is correct
+                    const clickedCard = e.target.closest('.session-card');
+                    if (clickedCard) {
+                        const sessionId = clickedCard.getAttribute('data-session');
+                        showSessionDetails(sessionId);
+                    }
+                });
+            });
+
+            // Event listener for the "Start Your Journey" button
+            startJourneyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Initial state: show details for Session 1 and make its card active
+            showSessionDetails('1');
+        });
+    </script>
+</body>
+</html>
