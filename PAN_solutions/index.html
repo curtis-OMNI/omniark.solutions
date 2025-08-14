@@ -89,15 +89,25 @@
       </div>
 
       <div>
-        <div class="video-card">
-          <video controls preload="metadata" poster="assets/pan-poster.png" width="100%">
-            <source src="assets/video/pan-promo.mp4" type="video/mp4" />
+        <div class="video-card" id="promoVideoWrap">
+          <video id="promoVideo" controls preload="metadata" poster="assets/pan-poster.png" width="100%">
+            <source src="assets/video/pan-promo.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
+        <script>
+          const v = document.getElementById('promoVideo');
+          v.addEventListener('error', () => {
+            document.getElementById('promoVideoWrap').insertAdjacentHTML('beforeend',
+              '<div style="padding:12px;color:#9aa3b2;font-size:14px">Having trouble playing the video? We’ll add a lightweight YouTube fallback shortly.</div>');
+          });
+        </script>
         <div class="video-meta">▶ 2‑minute overview · How PAN elevates your team</div>
       </div>
     </section>
+
+
+
 
     <section class="stats" aria-label="Impact stats">
       <div class="stat"><div class="val">‑60%</div><div class="lab">Manual tasks</div></div>
