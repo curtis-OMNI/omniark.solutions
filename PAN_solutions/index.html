@@ -5,22 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Personal Assistant Network (PAN) · Omni Ark Solutions</title>
   <meta name="description" content="PAN connects AI assistants across your tools to automate work, surface insights, and elevate your team—Human-as-the-Hero." />
-
-  <!-- Cookie‑light analytics (Plausible). Replace data-domain with your domain. -->
-  <script defer data-domain="omniark.solutions" src="https://plausible.io/js/script.js"></script>
-
-  <!-- Fonts (system stack to keep it simple for GitHub Pages demo) -->
+  <!-- Plausible: replace data-domain with your subdomain, e.g. pan.omniark.solutions -->
+  <script defer data-domain="pan.omniark.solutions" src="https://plausible.io/js/script.js"></script>
   <style>
-    :root{
-      --bg: #0b0c10;
-      --card: #101218;
-      --muted: #6b7280;
-      --text: #e5e7eb;
-      --brand: #6366f1; /* indigo */
-      --ring: rgba(99,102,241,.25);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0c0d12 0%,#0e1117 100%);color:var(--text);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial}
+    :root{--bg:#0b0c10;--card:#101218;--muted:#6b7280;--text:#e5e7eb;--brand:#2ec4c7;--ring:rgba(46,196,199,.25);}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#0c0d12,#0e1117);color:var(--text);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1120px;margin:0 auto;padding:24px}
     .hero{display:grid;grid-template-columns:1fr;gap:24px;padding:56px 0}
@@ -31,47 +20,30 @@
     .lead{color:#cbd5e1;max-width:620px}
     .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 18px;border-radius:14px;font-weight:600;border:1px solid #2a2f3a;background:#141826}
-    .btn.primary{background:linear-gradient(180deg,#6d73ff,#4f46e5);box-shadow:0 10px 20px -10px var(--ring)}
-    .logos{opacity:.9}
-
+    .btn.primary{background:linear-gradient(180deg,#2ec4c7,#0ea5a6);box-shadow:0 10px 20px -10px var(--ring)}
+    .logos{opacity:.95}
     .video-card{position:relative;border-radius:18px;overflow:hidden;background:#000;border:1px solid #22263a;box-shadow:0 8px 32px rgba(0,0,0,.35)}
     .video-meta{display:flex;align-items:center;gap:8px;color:#9aa3b2;font-size:13px;margin-top:8px}
-
     .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:30px 0}
     @media(min-width:780px){.stats{grid-template-columns:repeat(4,1fr)}}
     .stat{background:rgba(255,255,255,.03);border:1px solid #212435;border-radius:16px;padding:16px;text-align:center}
-    .stat .val{font-size:28px;font-weight:800}
-    .stat .lab{font-size:12px;color:#9aa3b2;margin-top:4px}
-
-    .section{padding:48px 0}
-    .section h2{font-size:28px;letter-spacing:-.02em;margin:0 0 10px}
+    .stat .val{font-size:28px;font-weight:800} .stat .lab{font-size:12px;color:#9aa3b2;margin-top:4px}
+    .section{padding:48px 0} .section h2{font-size:28px;letter-spacing:-.02em;margin:0 0 10px}
     .grid{display:grid;gap:16px}
     @media(min-width:980px){.grid.cols-4{grid-template-columns:repeat(4,1fr)}.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
     .card{background:var(--card);border:1px solid #1c2030;border-radius:16px;padding:18px}
-    .card h3{font-size:16px;margin:0 0 8px}
-    .muted{color:#9aa3b2}
-
-    /* Partner logo carousel */
+    .card h3{font-size:16px;margin:0 0 8px} .muted{color:#9aa3b2}
     .carousel{position:relative;overflow:hidden;border:1px solid #1c2030;border-radius:16px;background:rgba(255,255,255,.02)}
     .track{display:flex;gap:28px;align-items:center;animation:scroll 28s linear infinite;padding:16px}
     .track:hover{animation-play-state:paused}
-    .logo{height:28px;opacity:.85;filter:grayscale(100%);transition:.2s}
-    .logo:hover{opacity:1;filter:grayscale(0%)}
-    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
-
-    /* FAQ */
-    details{background:var(--card);border:1px solid #1c2030;border-radius:14px;padding:14px}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:600}
-
-    /* Form */
-    .form{display:grid;gap:12px}
-    @media(min-width:780px){.form{grid-template-columns:1fr 1fr}}
+    .logo{height:28px;opacity:.9;filter:grayscale(100%);transition:.2s} .logo:hover{opacity:1;filter:grayscale(0%)}
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    details{background:var(--card);border:1px solid #1c2030;border-radius:14px;padding:14px} details+details{margin-top:10px} summary{cursor:pointer;font-weight:600}
+    .form{display:grid;gap:12px} @media(min-width:780px){.form{grid-template-columns:1fr 1fr}}
     .form input,.form textarea{width:100%;background:#0f1322;border:1px solid #1e2233;color:#e6e9f2;border-radius:12px;padding:12px}
     .form textarea{min-height:120px}
     .cta-strip{display:flex;flex-direction:column;gap:14px;justify-content:space-between;align-items:flex-start;background:var(--card);border:1px solid #1c2030;border-radius:16px;padding:18px}
     @media(min-width:880px){.cta-strip{flex-direction:row;align-items:center}}
-
     footer{border-top:1px solid #1c2030;color:#9aa3b2}
   </style>
 </head>
@@ -79,20 +51,18 @@
   <header class="wrap" style="padding-top:18px">
     <nav style="display:flex;align-items:center;justify-content:space-between;gap:16px">
       <div style="display:flex;align-items:center;gap:12px">
-        <!-- Place your logo -->
-        <img src="assets/omniark-logo.svg" alt="Omni Ark Solutions" style="height:28px"/>
+        <img src="assets/logos/omniark-logo.png" alt="Omni Ark Solutions" style="height:28px;border-radius:4px"/>
         <span style="font-weight:700;letter-spacing:.02em">Omni Ark Solutions</span>
       </div>
       <div style="display:flex;gap:14px">
         <a class="muted" href="#learn">Learn</a>
         <a class="muted" href="#contact">Contact</a>
-        <a class="btn primary" href="book.html">Book a Discovery Call</a>
+        <a class="btn primary" href="book.html" onclick="plausible('Nav Book Call')">Book a Discovery Call</a>
       </div>
     </nav>
   </header>
 
   <main class="wrap">
-    <!-- HERO -->
     <section class="hero" id="hero">
       <div>
         <span class="badge">✨ Human‑as‑the‑Hero</span>
@@ -102,22 +72,17 @@
           <a class="btn primary" href="book.html" onclick="plausible('Book Call Click')">Book a Discovery Call →</a>
           <a class="btn" href="#learn" onclick="plausible('Learn More Click')">Learn More</a>
         </div>
-        <!-- Social proof carousel -->
         <div class="section logos" style="padding:28px 0 0">
           <div class="carousel" aria-label="Partner logos">
-            <div class="track" id="logoTrack">
-              <!-- Duplicate block content for seamless infinite scroll -->
-              <img class="logo" src="assets/logos/partner1.svg" alt="Partner 1"/>
-              <img class="logo" src="assets/logos/partner2.svg" alt="Partner 2"/>
-              <img class="logo" src="assets/logos/partner3.svg" alt="Partner 3"/>
-              <img class="logo" src="assets/logos/partner4.svg" alt="Partner 4"/>
-              <img class="logo" src="assets/logos/partner5.svg" alt="Partner 5"/>
-              <!-- duplicate for endless loop -->
-              <img class="logo" src="assets/logos/partner1.svg" alt="Partner 1"/>
-              <img class="logo" src="assets/logos/partner2.svg" alt="Partner 2"/>
-              <img class="logo" src="assets/logos/partner3.svg" alt="Partner 3"/>
-              <img class="logo" src="assets/logos/partner4.svg" alt="Partner 4"/>
-              <img class="logo" src="assets/logos/partner5.svg" alt="Partner 5"/>
+            <div class="track">
+              <img class="logo" src="assets/logos/partner1.png" alt="Partner 1"/>
+              <img class="logo" src="assets/logos/partner2.png" alt="Partner 2"/>
+              <img class="logo" src="assets/logos/partner1.png" alt="Partner 1 duplicate"/>
+              <img class="logo" src="assets/logos/partner2.png" alt="Partner 2 duplicate"/>
+              <img class="logo" src="assets/logos/omniark-logo.png" alt="Omni Ark"/>
+              <img class="logo" src="assets/logos/partner1.png" alt="Partner 1 again"/>
+              <img class="logo" src="assets/logos/partner2.png" alt="Partner 2 again"/>
+              <img class="logo" src="assets/logos/omniark-logo.png" alt="Omni Ark again"/>
             </div>
           </div>
         </div>
@@ -125,8 +90,7 @@
 
       <div>
         <div class="video-card">
-          <!-- For cookie-light demo, prefer self-hosted MP4. If you must embed YouTube, use youtube-nocookie.com. -->
-          <video controls preload="metadata" poster="assets/pan-poster.jpg" width="100%">
+          <video controls preload="metadata" poster="assets/pan-poster.png" width="100%">
             <source src="assets/video/pan-promo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -135,7 +99,6 @@
       </div>
     </section>
 
-    <!-- STATS -->
     <section class="stats" aria-label="Impact stats">
       <div class="stat"><div class="val">‑60%</div><div class="lab">Manual tasks</div></div>
       <div class="stat"><div class="val">3×</div><div class="lab">Faster time to insight</div></div>
@@ -143,7 +106,6 @@
       <div class="stat"><div class="val">2–3 mo</div><div class="lab">Foundational setup</div></div>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section id="learn" class="section">
       <h2>How PAN Works</h2>
       <p class="muted">PAN orchestrates specialized AI assistants across your stack—Docs, Sheets, BigQuery, CRM, email, and workflows—so information flows where it’s needed, when it’s needed.</p>
@@ -155,7 +117,6 @@
       </div>
     </section>
 
-    <!-- PROGRAM STEPS -->
     <section class="section">
       <h2>Your Path to Value</h2>
       <div class="grid cols-3" style="margin-top:16px">
@@ -165,7 +126,6 @@
       </div>
     </section>
 
-    <!-- CTA STRIP -->
     <section class="section">
       <div class="cta-strip">
         <div>
@@ -179,7 +139,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section">
       <h2>FAQ</h2>
       <details><summary>How fast can we get value from PAN?</summary><p class="muted">Most teams see measurable impact within the first 4–8 weeks, with foundational setup in 2–3 months.</p></details>
@@ -187,7 +146,6 @@
       <details><summary>Can PAN work with our existing tools?</summary><p class="muted">Yes. We integrate with Google Workspace, BigQuery, Sheets, Docs, CRM systems, and more through secure connectors and APIs.</p></details>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section">
       <h2>Tell us about your goals</h2>
       <form class="form" onsubmit="leadSubmit(event)">
@@ -216,24 +174,14 @@
   </footer>
 
   <script>
-    // year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // simple form submit (replace with your endpoint or GitHub Pages-friendly static handler like Formspree)
     async function leadSubmit(e){
       e.preventDefault();
       const form = e.target;
       const data = Object.fromEntries(new FormData(form).entries());
       const status = document.getElementById('formStatus');
-      try{
-        // Example: POST to n8n webhook
-        // await fetch('https://YOUR_N8N_WEBHOOK_URL', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({...data, source:'pan-landing'})});
-        plausible('Lead Submitted');
-        status.textContent = 'Thanks! We\'ll get back to you shortly.';
-        form.reset();
-      }catch(err){
-        status.textContent = 'Something went wrong. Please email hello@omniark.solutions';
-      }
+      try{ plausible('Lead Submitted'); status.textContent='Thanks! We\'ll get back to you shortly.'; form.reset(); }
+      catch(err){ status.textContent='Something went wrong. Please email hello@omniark.solutions'; }
     }
   </script>
 </body>
