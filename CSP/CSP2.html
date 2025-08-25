@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comprehensive Solution Program — Interactive Steps</title>
+  <style>
+    :root{
+      --bg:#0b0f19; --card:#111827; --muted:#94a3b8; --ink:#e5e7eb; --accent:#22d3ee;
+    }
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;line-height:1.5;color:var(--ink);background:linear-gradient(180deg,#0b0f19,#0f172a);}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .hero{text-align:center;padding:40px 0}
+    h1{margin:0;font-size:40px}
+    p.sub{color:var(--muted)}
+
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .step{border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;cursor:pointer;background:rgba(255,255,255,.05);transition:.2s}
+    .step.active{outline:2px solid var(--accent);box-shadow:0 0 0 4px rgba(34,211,238,.15)}
+    .step h3{margin:0 0 8px}
+    .step p{margin:0;color:var(--muted)}
+
+    .bubble{margin-top:20px;padding:20px;border:1px dashed rgba(255,255,255,.2);border-radius:18px;background:linear-gradient(180deg,rgba(34,211,238,.06),rgba(167,139,250,.05));}
+    .bubble h4{margin:0 0 12px}
+    ul.clean{margin:0 0 0 20px}
+    ul.clean li{margin:4px 0}
+  </style>
+</head>
+<body>
+  <header class="container hero">
+    <h1>Comprehensive Solution Program</h1>
+    <p class="sub">Click a step below to see full inclusions and descriptions.</p>
+  </header>
+
+  <main class="container">
+    <section class="steps" id="steps">
+      <div class="step active" data-step="1">
+        <h3>Step 1 — Discover & Design</h3>
+        <p>Roadmap, demo, and alignment.</p>
+      </div>
+      <div class="step" data-step="2">
+        <h3>Step 2 — Build & Launch</h3>
+        <p>Implementation and training.</p>
+      </div>
+      <div class="step" data-step="3">
+        <h3>Step 3 — Optimize & Scale</h3>
+        <p>Knowledge systems and improvement.</p>
+      </div>
+    </section>
+
+    <section class="bubble" id="bubble-inclusions">
+      <h4>What’s included in Step <span id="ix1">1</span></h4>
+      <div id="inc"></div>
+    </section>
+    <section class="bubble" id="bubble-description">
+      <h4>Step <span id="ix2">1</span> — Description & Artifacts</h4>
+      <div id="desc"></div>
+    </section>
+  </main>
+
+  <script>
+    const data={
+      1:{
+        inclusions:`<ul class="clean"><li>✅ 4 IMPACT Sessions — Review, Deep Dive, Refinement, App Map, Scope, Estimations</li><li>✅ 2 Innovative Consulting Sessions</li><li>✅ 1 Innovative Coaching</li><li>✅ Discovery Workshop — Demo intro, feedback, RoadMapv2</li></ul>`,
+        description:`<ul class="clean"><li><strong>Artifacts:</strong> Innovation Roadmap, Solution Track Proposal</li><li>✅ Demo Includes: Apps prototypes, Dashboards, Automations, Insights</li></ul>`
+      },
+      2:{
+        inclusions:`<ul class="clean"><li>✅ 2 IMPACT Sessions — Migration & Training</li><li>✅ 1 Consulting Session — Check-in</li><li>✅ 2x 1:1 Collaborative Sessions</li><li>✅ 4 Team Coaching Sessions</li><li>✅ Workshop: AI for Business (Beginner)</li><li>✅ Solution Track Milestones 2 & 3</li></ul>`,
+        description:`<ul class="clean"><li><strong>Outcomes:</strong> Systems live, teams trained, early wins</li><li><strong>Focus:</strong> Dashboards, Workspace rollout, Policies</li></ul>`
+      },
+      3:{
+        inclusions:`<ul class="clean"><li>✅ 2 IMPACT Sessions — Feedback, Features, KPI</li><li>✅ 2 Consulting Sessions — Scaling strategy</li><li>✅ 1:1 Coaching</li><li>✅ 2 Team Coaching Sessions</li><li>✅ Workshop: AI (Advanced)</li><li>✅ Milestone 4 — PAN iteration</li></ul>`,
+        description:`<ul class="clean"><li><strong>Outcomes:</strong> Scalable systems, Continuous improvement, Advanced AI</li><li><strong>Enhancements:</strong> Dashboards, Knowledge base, Integrations</li></ul>`
+      }
+    };
+
+    const inc=document.getElementById('inc');
+    const desc=document.getElementById('desc');
+    const ix1=document.getElementById('ix1');
+    const ix2=document.getElementById('ix2');
+
+    function render(step){
+      ix1.textContent=step;ix2.textContent=step;
+      inc.innerHTML=data[step].inclusions;
+      desc.innerHTML=data[step].description;
+      document.querySelectorAll('.step').forEach(el=>el.classList.toggle('active',el.dataset.step==step));
+    }
+
+    render(1);
+
+    document.getElementById('steps').addEventListener('click',e=>{
+      const card=e.target.closest('.step');
+      if(!card)return;
+      render(card.dataset.step);
+    });
+  </script>
+</body>
+</html>
