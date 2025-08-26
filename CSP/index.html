@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Solution Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutral (Stone, Amber, Slate) -->
+    <!-- Application Structure Plan: A single-page, top-down narrative structure. It begins with a high-level interactive timeline of the 3-step program. Clicking a step dynamically updates a detailed content section below, using a "progressive disclosure" model. This prevents overwhelming the user with information and creates an engaging, exploratory experience. The page concludes with a clear, static agreement section. This structure was chosen to guide the user from a high-level "brochure" understanding to the detailed "agreement" seamlessly. -->
+    <!-- Visualization & Content Choices: The core visualization is an interactive process timeline built with HTML/CSS, not a chart, as the data is qualitative. Report Info: Program Steps -> Goal: Organize/Inform -> Viz: Interactive Cards -> Interaction: Click to reveal details -> Justification: Best way to show a process and allow user-paced exploration. Report Info: Deliverables -> Goal: Inform -> Viz: Styled Lists with Unicode icons -> Interaction: None -> Justification: Clear and scannable. All content is dynamically populated using JavaScript from a structured data object to ensure consistency and easy updates. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .timeline-card {
+            transition: all 0.3s ease-in-out;
+            border-width: 2px;
+            border-color: transparent;
+        }
+        .timeline-card.active {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border-color: #f59e0b; /* amber-500 */
+        }
+        .content-section {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-5xl">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800">Comprehensive Solution Program</h1>
+            <p class="mt-4 text-lg sm:text-xl text-slate-600">A three-step journey to transform your business with automation, data management, AI-powered insights, and sustainable growth.</p>
+        </header>
+
+        <!-- Interactive Timeline Section -->
+        <section id="timeline" class="mb-12">
+            <h2 class="text-2xl font-bold text-center mb-8 text-slate-800">Your Journey to Transformation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Step 1 Card -->
+                <div id="step-1" class="timeline-card active bg-white p-6 rounded-lg shadow-md cursor-pointer border-l-4 border-green-500">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded-full">Step 1</span>
+                        <span class="text-slate-500 text-sm">1–3 Months</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900">Discover & Design</h3>
+                    <p class="mt-2 text-slate-600">Theme: Clarity & Direction. Laying the foundation for success.</p>
+                </div>
+                <!-- Step 2 Card -->
+                <div id="step-2" class="timeline-card bg-white p-6 rounded-lg shadow-md cursor-pointer border-l-4 border-amber-500">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-amber-100 text-amber-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded-full">Step 2</span>
+                        <span class="text-slate-500 text-sm">3–4 Months</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900">Build & Launch</h3>
+                    <p class="mt-2 text-slate-600">Theme: Activation & Empowerment. Bringing the vision to life.</p>
+                </div>
+                <!-- Step 3 Card -->
+                <div id="step-3" class="timeline-card bg-white p-6 rounded-lg shadow-md cursor-pointer border-l-4 border-green-500">
+                     <div class="flex items-center mb-3">
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold mr-3 px-2.5 py-0.5 rounded-full">Step 3</span>
+                        <span class="text-slate-500 text-sm">1–3 Months</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900">Optimize & Scale</h3>
+                    <p class="mt-2 text-slate-600">Theme: Growth & Impact. Ensuring long-term value.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Section -->
+        <main id="content-display" class="bg-white p-6 sm:p-8 rounded-lg shadow-lg content-section">
+            <!-- Content will be injected here by JavaScript -->
+        </main>
+
+        <!-- Agreement Section -->
+        <section id="agreement" class="mt-16 bg-slate-100 p-6 sm:p-8 rounded-lg border border-slate-200">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 text-slate-800">Client Agreement & Authorization</h2>
+            <div class="space-y-6 text-slate-700">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">1. Scope of Services</h3>
+                    <p>The services provided are detailed in the three core phases explored above: (1) Discover & Design, (2) Build & Launch, and (3) Optimize & Scale. Each phase concludes with the specific deliverables and outcomes outlined in the Solution Track.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">2. Payment Terms</h3>
+                    <p>Fees will be structured based on the milestones outlined in the Solution Track Proposal. Invoices will be issued upon the successful completion of each milestone and are payable within 30 days of receipt.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">3. Client Responsibilities</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-2">
+                        <li><strong>Participation:</strong> Ensure key stakeholders are available for all scheduled sessions and workshops.</li>
+                        <li><strong>Access:</strong> Provide timely access to relevant personnel, data, and systems required for the project.</li>
+                        <li><strong>Feedback:</strong> Provide clear and timely feedback at review stages to ensure the project remains on track.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">4. Provider Responsibilities</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-2">
+                        <li><strong>Delivery:</strong> Deliver all artifacts, demos, training, and systems as outlined in the Scope of Services.</li>
+                        <li><strong>Communication:</strong> Maintain regular communication on project progress, milestones, and any potential roadblocks.</li>
+                        <li><strong>Support:</strong> Provide ongoing support and coaching as detailed in each phase of the program.</li>
+                    </ul>
+                </div>
+            </div>
+        <!-- Agreement Section -->
+        <section id="agreement" class="mt-16 bg-slate-100 p-6 sm:p-8 rounded-lg border border-slate-200">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 text-slate-800">Ready to Begin?</h2>
+            <p class="text-center text-slate-600 max-w-2xl mx-auto">
+                Click the button below to open the official agreement in a new tab. Fill in your details and complete the e-signature process directly within Google Docs.
+            </p>
+            
+            <!-- eSignature Button -->
+            <div class="mt-8 text-center">
+                <a href="https://docs.google.com/document/d/1Fc3Sdh1T8Ym1HrZogtpZUDeWRZlT6bzWLFJGq4BoHvs/copy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                id="start-esign-button" 
+                class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-md">
+                    Sign Agreement in Google Docs
+                </a>
+            </div>
+        </section>            
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const programData = {
+            1: {
+                title: "Step 1 — Discover & Design",
+                theme: "Clarity & Direction",
+                outcome: "A tailored roadmap and proof of concept that demonstrates exactly how AI and automation will impact your business.",
+                included: [
+                    "4 IMPACT Sessions for roadmap building",
+                    "2 Innovative Consulting Sessions for expert advice",
+                    "1 Innovative Coaching session for personal guidance",
+                    "Discovery Workshop to introduce the Demo",
+                    "Solution Track Milestone 1: Demo delivery",
+                ],
+                artifacts: [
+                    "Innovation Roadmap: Strategic blueprint",
+                    "Solution Track Proposal with Demo",
+                ],
+                demoIncludes: [
+                    "App Prototypes (Inventory, Operations, Finance, etc.)",
+                    "Interactive Dashboards Prototype (AppSheet)",
+                    "Workflow Automations",
+                    "Business Insight Feature Review",
+                ],
+                clientGets: "A clear vision, a working demo, and a detailed plan to proceed with confidence."
+            },
+            2: {
+                title: "Step 2 — Build & Launch",
+                theme: "Activation & Empowerment",
+                outcome: "Implementation of AI systems and training your team to leverage them.",
+                included: [
+                    "2 IMPACT Sessions for migration and training plans",
+                    "1 Innovative Consulting Session on Google Workspace",
+                    "2 1:1 Collaborative Sessions per Role",
+                    "4 Team Coaching Sessions to drive adoption",
+                    "Workshop: Intro to AI for Business (Beginner)",
+                    "Solution Track Milestones 2 & 3: Build, Train, Launch",
+                ],
+                artifacts: [
+                    "Google Workspace deployed",
+                    "Operational Efficiency Workflows fully implemented",
+                    "Role-based dashboards and actions integrated",
+                    "Company policies integrated into systems",
+                    "Templates established for continuous automation",
+                ],
+                demoIncludes: [],
+                clientGets: "Systems activated, teams trained, and early wins achieved."
+            },
+            3: {
+                title: "Step 3 — Optimise & Scale",
+                theme: "Growth & Impact",
+                outcome: "Future-ready systems and a culture of continuous improvement.",
+                included: [
+                    "2 IMPACT Sessions for feedback and progress reviews",
+                    "2 Innovative Consulting Sessions for scaling strategy",
+                    "1:1 Coaching Session for individual development",
+                    "2 Team Coaching Sessions for cultural adoption",
+                    "Workshop: Intro to AI for Business (Advanced)",
+                    "Solution Track Milestone 4: Iteration and feedback flow",
+                ],
+                artifacts: [
+                    "Comprehensive Knowledge Base",
+                    "Advanced Context Retrieval System",
+                    "Integration of multiple data sources into dashboards",
+                    "Expanded Google Workspace integrations",
+                ],
+                demoIncludes: [],
+                clientGets: "A fully optimised ecosystem, empowered teams, and scalable knowledge systems driving continuous improvement."
+            }
+        };
+
+        const timeline = document.getElementById('timeline');
+        const contentDisplay = document.getElementById('content-display');
+        let currentStep = 1;
+
+        function updateContent(step) {
+            const data = programData[step];
+            if (!data) return;
+
+            contentDisplay.style.opacity = 0;
+
+            setTimeout(() => {
+                let includedHtml = data.included.map(item => `<li class="flex items-start"><span class="text-green-500 mr-2 mt-1">✓</span><span>${item}</span></li>`).join('');
+                let artifactsHtml = data.artifacts.map(item => `<li class="flex items-start"><span class="text-amber-500 mr-2 mt-1">★</span><span>${item}</span></li>`).join('');
+                let demoHtml = data.demoIncludes.length > 0 ? `
+                    <h4 class="font-semibold text-slate-800 mt-4 mb-2">Demo Includes:</h4>
+                    <ul class="space-y-1 text-slate-600 list-disc list-inside">
+                        ${data.demoIncludes.map(item => `<li>${item}</li>`).join('')}
+                    </ul>` : '';
+
+                contentDisplay.innerHTML = `
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-2">${data.title}</h2>
+                    <p class="text-lg text-amber-600 font-medium mb-4">${data.theme}</p>
+                    <p class="text-slate-600 mb-6">${data.outcome}</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 mb-2">Included Activities:</h4>
+                            <ul class="space-y-2 text-slate-600">${includedHtml}</ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800 mb-2">Key Deliverables:</h4>
+                            <ul class="space-y-2 text-slate-600">${artifactsHtml}</ul>
+                            ${demoHtml}
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-200 bg-slate-50 p-4 rounded-md">
+                        <p class="text-center font-semibold text-slate-800 text-lg">What you get: <span class="font-normal text-slate-700">${data.clientGets}</span></p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-200 text-center">
+                        <button id="generate-faqs" class="bg-amber-500 text-white font-semibold py-2 px-5 rounded-lg hover:bg-amber-600 transition-colors shadow-sm">
+                            ✨ Generate Potential Team FAQs
+                        </button>
+                    </div>
+                    <div id="faq-container" class="mt-6 hidden p-6 bg-slate-50 rounded-lg">
+                        <div id="faq-spinner" class="flex justify-center items-center hidden"><div class="animate-spin rounded-full h-8 w-8 border-b-2 border-slate-900"></div></div>
+                        <div id="faq-content"></div>
+                    </div>                    
+
+
+                `;
+                contentDisplay.style.opacity = 1;
+            }, 300);
+        }
+
+        function handleTimelineClick(e) {
+            const card = e.target.closest('.timeline-card');
+            if (!card) return;
+
+            const step = card.id.split('-')[1];
+            if (step === currentStep) return;
+
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            card.classList.add('active');
+            
+            currentStep = step;
+            updateContent(currentStep);
+        }
+
+        timeline.addEventListener('click', handleTimelineClick);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent(currentStep);
+        });
+    </script>
+</body>
+</html>
